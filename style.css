@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  overflow-x: hidden;
+}
+.nav-main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.navbar {
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(96, 96, 96);
+  font-size: 16px;
+  font-family: poppins;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  color: #004cdb;
+}
+
+#home {
+  color: #004cdb;
+}
+.signin-btn {
+  background-color: #004cdb;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  font-family: poppins;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -80%;
+  width: 80%;
+  height: 100%;
+  background-color: whitesmoke;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+}
+
+.drawer.active {
+  left: 0;
+}
+
+.drawer.active + .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.drawer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.drawer ul li {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.drawer ul li a {
+  text-decoration: none;
+  color: rgb(101, 101, 101);
+}
+
+#signin {
+  display: none;
+  background-color: #004cdb;
+  color: white;
+  padding: 8px;
+  border: none;
+  font-family: poppins;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 750px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  .logo {
+    height: 35px;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .signin-btn {
+    margin-left: auto;
+    display: none;
+  }
+  #signin {
+    display: block;
+  }
+}
